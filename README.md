@@ -228,5 +228,5 @@ http://192.168.101.11:8080/client
 ```
 ## CONTINUE WITH INSTALATION
 
-![alt text](https://github.com/maradens/apachecloudstack/cloudstack.png?raw=true)
+![CloudStack](/images/cloudstack.png?raw=true "Apache CloudStack 4.18")
 
