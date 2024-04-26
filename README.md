@@ -19,10 +19,10 @@ network:
       optional: true
   bridges:
     cloudbr0:
-      addresses: [192.168.101.11/24]
+      addresses: [192.168.104.21/24]
       routes:
         - to: default
-          via: 192.168.101.1
+          via: 192.168.104.1
       nameservers:
         addresses: [1.1.1.1,8.8.8.8]
       interfaces: [eno1]
@@ -42,11 +42,11 @@ reboot
 ```
 ## Update your system and install some useful tools
 ```
-apt update & update
+apt update & upgrade
 apt install htop lynx duf -y
 apt install bridge-utils
 ```
-## CONFIGURE LVM +100%FREE
+## CONFIGURE LVM +100%FREE (OPTIONAL)
 ```
 lvextend -l +100%FREE /dev/ubuntu-vg/ubuntu-lv
 resize2fs /dev/ubuntu-vg/ubuntu-lv
