@@ -206,8 +206,11 @@ apparmor_parser -R /etc/apparmor.d/usr.lib.libvirt.virt-aa-helper
 apt update
 apt install xfce4 xfce4-goodies -y
 apt install xrdp -y
+```
+
 #configure to allow tcp ipv4 listen to 3389. It's a bug only listen to tcp6 --> port=tcp://:3389 --> /etc/xrdp/xrdp.ini
 
+```
 netstat -tulpn | grep xrdp
 
 sed -i.bak 's/^\(port=\).*/\1tcp:\/\/:3389/' /etc/xrdp/xrdp.ini
