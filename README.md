@@ -226,7 +226,7 @@ systemctl status cloudstack-management
 tail -f /var/log/cloudstack/management/management-server.log
 ```
 
-#After management server is UP, proceed to http://192.168.101.11(i.e. the cloudbr0-IP):8080/client and log in using the default credentials - username admin and password password.
+#After management server is UP, proceed to http://192.168.104.21(i.e. the cloudbr0-IP):8080/client and log in using the default credentials - username admin and password password.
 ```
 http://192.168.101.11:8080/client
 ```
