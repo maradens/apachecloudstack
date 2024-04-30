@@ -4,7 +4,7 @@
 
 =============================================================
 
-## NETWORK CONFIGURATION 
+### NETWORK CONFIGURATION 
 Home network: 192.168.104.0/24
 Gateway: 192.168.104.1
 Subnet Mask: 255.255.255.0
@@ -13,11 +13,12 @@ IP Address for management: 192.168.104.10
 IP Address for system: 192.168.104.151-160
 IP Address for public: 192.168.104.200-210
 
-## SET STATIC IP ADDRESS FOR MANAGEMENT SERVER
+===============================
+### SET STATIC IP ADDRESS FOR MANAGEMENT SERVER
   
-### Network configuration with netplan
-### Rename all existing configuration by adding .bak
-### maradens@dtecloud:~$ cat /etc/netplan/01-netcfg.yaml
+#### Network configuration with netplan
+#### Rename all existing configuration by adding .bak
+#### maradens@dtecloud:~$ cat /etc/netplan/01-netcfg.yaml
 ```
 # This is the network config written by 'subiquity'
 network:
@@ -43,8 +44,7 @@ network:
         stp: false
         forward-delay: 0
 ```
-
-## Apply your network configuration
+### Apply your network configuration
 ```
 sudo -i
 netplan generate
@@ -57,29 +57,27 @@ apt update & upgrade
 apt install htop lynx duf -y
 apt install bridge-utils
 ```
-## CONFIGURE LVM +100%FREE (OPTIONAL)
+### Configure LVM (OPTIONAL)
 ```
 lvextend -l +100%FREE /dev/ubuntu-vg/ubuntu-lv
 resize2fs /dev/ubuntu-vg/ubuntu-lv
 ```
-
-## Install ssh server and others tool if not yet present
+### Install SSH Server and Others Tools 
 ```
 apt-get install openntpd openssh-server sudo vim htop tar -y
 apt-get install intel-microcode -y
 passwd root
+#change it to Pa$$w0rd
 ```
-#change to Pa$$w0rd
-
-## SET TIME
-timedatectl set-timezone Asia/Jakarta
-
-#enable Root Login
-#PermitRootLogin yes
+### Enable Root Login (PermitRootLogin)
 ```
 sed -i '/#PermitRootLogin prohibit-password/a PermitRootLogin yes' /etc/ssh/sshd_config
 #restart ssh service
 service ssh restart
+```
+### SET TIMEZONE
+```
+timedatectl set-timezone Asia/Jakarta
 ```
 
 ## APACHE CLOUDSTACK INSTALLATION
