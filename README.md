@@ -219,6 +219,26 @@ tail -f /var/log/cloudstack/management/management-server.log
 http://192.168.104.10:8080/client
 ```
 ==============================================================
+### Enable XRDP (OPTIONAL) ---> Not working for new UBUNTU
+#### Reference
+```
+#https://www.digitalocean.com/community/tutorials/how-to-enable-remote-desktop-protocol-using-xrdp-on-ubuntu-22-04
+```
+#### Install Desktop XFCE environtment and Remote Desktop XRDP
+```
+apt update
+apt install xfce4 xfce4-goodies -y
+apt install xrdp -y
+```
+#### configure to allow tcp ipv4 listen to 3389. It's a bug only listen to tcp6 --> port=tcp://:3389 --> /etc/xrdp/xrdp.ini
+```
+netstat -tulpn | grep xrdp
+
+sed -i.bak 's/^\(port=\).*/\1tcp:\/\/:3389/' /etc/xrdp/xrdp.ini
+systemctl restart xrdp
+systemctl status xrdp
+```
+==============================================================
 ## CONTINUE WITH INSTALATION (DASHBOARD)
 
 ![CloudStack](/images/cloudstack.png?raw=true "Apache CloudStack 4.18")
