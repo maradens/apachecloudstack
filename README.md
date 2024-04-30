@@ -2,13 +2,22 @@
 
 ## ALL in ONE - Cloudstack Management and Host in One Machine
 
-### Home network 192.168.101.0/24
+=============================================================
 
-## SET STATIC IP ADDRESS
+## NETWORK CONFIGURATION 
+Home network: 192.168.104.0/24
+Gateway: 192.168.104.1
+Subnet Mask: 255.255.255.0
+
+IP Address for management: 192.168.104.10
+IP Address for system: 192.168.104.151-160
+IP Address for public: 192.168.104.200-210
+
+## SET STATIC IP ADDRESS FOR MANAGEMENT SERVER
   
-## Network configuration with netplan
-#rename all existing configuration by adding .bak
-maradens@dtecloud:~$ cat /etc/netplan/01-netcfg.yaml
+### Network configuration with netplan
+### Rename all existing configuration by adding .bak
+### maradens@dtecloud:~$ cat /etc/netplan/01-netcfg.yaml
 ```
 # This is the network config written by 'subiquity'
 network:
@@ -21,7 +30,7 @@ network:
       optional: true
   bridges:
     cloudbr0:
-      addresses: [192.168.104.21/24]
+      addresses: [192.168.104.10/24]
       routes:
         - to: default
           via: 192.168.104.1
