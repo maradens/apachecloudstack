@@ -2,7 +2,7 @@
 
 ## ALL in ONE - Cloudstack Management and Host in One Machine
 
-=============================================================
+==============================================================
 
 ### NETWORK CONFIGURATION 
 Home network: 192.168.104.0/24
@@ -79,32 +79,37 @@ service ssh restart
 ```
 timedatectl set-timezone Asia/Jakarta
 ```
-
+==============================================================
 ## APACHE CLOUDSTACK INSTALLATION
 ## CloudStack Management Server and Everything in one machine
-https://rohityadav.cloud/blog/cloudstack-kvm/
 
-## CloudStack Management Server Setup from SHAPEBLUE ACS 4.18
+#### Reference
+```
+https://rohityadav.cloud/blog/cloudstack-kvm/
+```
+
+### CloudStack Management Server Setup from SHAPEBLUE ACS 4.18
 ```
 sudo -i
 mkdir -p /etc/apt/keyrings
 wget -O- http://packages.shapeblue.com/release.asc | gpg --dearmor | sudo tee /etc/apt/keyrings/cloudstack.gpg > /dev/null
-
 echo deb [signed-by=/etc/apt/keyrings/cloudstack.gpg] http://packages.shapeblue.com/cloudstack/upstream/debian/4.18 / > /etc/apt/sources.list.d/cloudstack.list
-```
-```
+
+#update and install cloudstack management and mysql
+#it takes very long time
+
 apt-get update -y
 apt-get install cloudstack-management mysql-server
 ```
-#CloudStack usage and billing (optional)
+### CloudStack Usage and Billing (OPTIONAL)
 ```
 apt-get install cloudstack-usage 
 ```
-#Configure database --> next time using sed 
+### Configure Database --> next time using sed 
 ```
 nano /etc/mysql/mysql.conf.d/mysqld.cnf
 ```
-paste
+#### Paste below
 ```
 [mysqld]
 server-id = 1
@@ -115,23 +120,22 @@ max_connections=1000
 log-bin=mysql-bin
 binlog-format = 'ROW'
 ```
-restart
+#### Restart
 ```
 systemctl restart mysql
 ```
-#deploy database as root and then create cloud user with password cloud too
+#### Deploy database as root and then create cloud user with password cloud too
 ```
 cloudstack-setup-databases cloud:cloud@localhost --deploy-as=root:Pa$$w0rd -i 192.168.104.21
 ```
-#Storage Setup
+### Primary and Secondary Storage Setup
 ```
 apt-get install nfs-kernel-server quota
 echo "/export  *(rw,async,no_root_squash,no_subtree_check)" > /etc/exports
 mkdir -p /export/primary /export/secondary
 exportfs -a
 ```
-
-#Configure NFS server
+### Configure NFS server
 ```
 sed -i -e 's/^RPCMOUNTDOPTS="--manage-gids"$/RPCMOUNTDOPTS="-p 892 --manage-gids"/g' /etc/default/nfs-kernel-server
 sed -i -e 's/^STATDOPTS=$/STATDOPTS="--port 662 --outgoing-port 2020"/g' /etc/default/nfs-common
@@ -140,18 +144,16 @@ sed -i -e 's/^RPCRQUOTADOPTS=$/RPCRQUOTADOPTS="-p 875"/g' /etc/default/quota
 service nfs-kernel-server restart
 ```
 
-## Setup KVM
-#Setup KVM host and cloudstack agent
+## Setup KVM Host and Cloudstack Agent
 ```
 apt-get install qemu-kvm cloudstack-agent
 sed -i -e 's/\#vnc_listen.*$/vnc_listen = "0.0.0.0"/g' /etc/libvirt/qemu.conf
 ```
-#On Ubuntu 22.04, add LIBVIRTD_ARGS="--listen" to /etc/default/libvirtd instead.
+#### On Ubuntu 22.04, add LIBVIRTD_ARGS="--listen" to /etc/default/libvirtd instead.
 ```
 sed -i.bak 's/^\(LIBVIRTD_ARGS=\).*/\1"--listen"/' /etc/default/libvirtd
 ```
-
-#Configure default libvirtd config:
+#### Configure default libvirtd config:
 ```
 echo 'listen_tls=0' >> /etc/libvirt/libvirtd.conf
 echo 'listen_tcp=1' >> /etc/libvirt/libvirtd.conf
@@ -162,23 +164,21 @@ echo 'auth_tcp = "none"' >> /etc/libvirt/libvirtd.conf
 systemctl mask libvirtd.socket libvirtd-ro.socket libvirtd-admin.socket libvirtd-tls.socket libvirtd-tcp.socket
 systemctl restart libvirtd
 ```
-
-#On certain hosts where you may be running docker and other services, you may need to add the following in /etc/sysctl.conf and then run sysctl -p: --> /etc/sysctl.conf
+#### On certain hosts where you may be running docker and other services, 
+#### you may need to add the following in /etc/sysctl.conf and then run sysctl -p: --> /etc/sysctl.conf
 ```
 echo "net.bridge.bridge-nf-call-arptables = 0" >> /etc/sysctl.conf
 echo "net.bridge.bridge-nf-call-iptables = 0" >> /etc/sysctl.conf
 sysctl -p
 ```
-#generate host id
+#### Generate Host ID
 ```
 apt-get install uuid -y
 UUID=$(uuid)
 echo host_uuid = \"$UUID\" >> /etc/libvirt/libvirtd.conf
 systemctl restart libvirtd
 ```
-
-#configure firewall (OPTIONAL)
-# configure iptables
+#### Configure Firewall iptables (OPTIONAL)
 ```
 NETWORK=192.168.101.0/24
 iptables -A INPUT -s $NETWORK -m state --state NEW -p udp --dport 111 -j ACCEPT
@@ -198,48 +198,28 @@ iptables -A INPUT -s $NETWORK -m state --state NEW -p tcp --dport 16514 -j ACCEP
 #iptables -A INPUT -s $NETWORK -m state --state NEW -p tcp --dport 3128 -j ACCEPT
 
 apt-get install iptables-persistent
+#just answer yes yes
 ```
-#yes yes
-
-# Disable apparmour on libvirtd
+#### Disable apparmour on libvirtd
 ```
 ln -s /etc/apparmor.d/usr.sbin.libvirtd /etc/apparmor.d/disable/
 ln -s /etc/apparmor.d/usr.lib.libvirt.virt-aa-helper /etc/apparmor.d/disable/
 apparmor_parser -R /etc/apparmor.d/usr.sbin.libvirtd
 apparmor_parser -R /etc/apparmor.d/usr.lib.libvirt.virt-aa-helper
 ```
-
-#Enable XRDP --> OPTIONAL
-#https://www.digitalocean.com/community/tutorials/how-to-enable-remote-desktop-protocol-using-xrdp-on-ubuntu-22-04
-```
-apt update
-apt install xfce4 xfce4-goodies -y
-apt install xrdp -y
-```
-
-#configure to allow tcp ipv4 listen to 3389. It's a bug only listen to tcp6 --> port=tcp://:3389 --> /etc/xrdp/xrdp.ini
-
-```
-netstat -tulpn | grep xrdp
-
-sed -i.bak 's/^\(port=\).*/\1tcp:\/\/:3389/' /etc/xrdp/xrdp.ini
-systemctl restart xrdp
-systemctl status xrdp
-```
-
-#Launch Management Server
-#Start your cloud:
+## Launch Management Server and Start Your Cloud
 ```
 cloudstack-setup-management
 systemctl status cloudstack-management
 tail -f /var/log/cloudstack/management/management-server.log
 ```
-
-#After management server is UP, proceed to http://192.168.104.21(i.e. the cloudbr0-IP):8080/client and log in using the default credentials - username admin and password password.
+#### After management server is UP, proceed to http://192.168.104.21(i.e. the cloudbr0-IP):8080/client 
+#### and log in using the default credentials - username admin and password password.
 ```
-http://192.168.101.11:8080/client
+http://192.168.104.10:8080/client
 ```
-## CONTINUE WITH INSTALATION
+==============================================================
+## CONTINUE WITH INSTALATION (DASHBOARD)
 
 ![CloudStack](/images/cloudstack.png?raw=true "Apache CloudStack 4.18")
 
