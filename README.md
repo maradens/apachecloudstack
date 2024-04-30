@@ -315,14 +315,14 @@ apparmor_parser -R /etc/apparmor.d/usr.sbin.libvirtd
 apparmor_parser -R /etc/apparmor.d/usr.lib.libvirt.virt-aa-helper
 ```
 
-### STORAGE SETUP for Additional PRIMARY and SECONDARY
+#### STORAGE SETUP for Additional PRIMARY and SECONDARY
 ```
 apt-get install nfs-kernel-server quota
 echo "/export  *(rw,async,no_root_squash,no_subtree_check)" > /etc/exports
 mkdir -p /export/primary /export/secondary
 exportfs -a
 ```
-## Configure NFS server
+#### Configure NFS server
 ```
 sed -i -e 's/^RPCMOUNTDOPTS="--manage-gids"$/RPCMOUNTDOPTS="-p 892 --manage-gids"/g' /etc/default/nfs-kernel-server
 sed -i -e 's/^STATDOPTS=$/STATDOPTS="--port 662 --outgoing-port 2020"/g' /etc/default/nfs-common
