@@ -1,6 +1,8 @@
-# Apache CloudStack 4.18 Installation
-## Installation CloudStack 4.18 on Ubuntu 22.04
-Home network 192.168.101.0/24
+# Apache CloudStack 4.18 Installation on Ubuntu 22.04
+
+## ALL in ONE - Cloudstack Management and Host in One Machine
+
+### Home network 192.168.101.0/24
 
 ## SET STATIC IP ADDRESS
   
