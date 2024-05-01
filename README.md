@@ -252,6 +252,10 @@ systemctl status xrdp
 
 [![Cloudstack 4.18 Installation on Dashboard](https://img.youtube.com/vi/8ZZeU3vbbl4/0.jpg)](https://www.youtube.com/watch?v=8ZZeU3vbbl4)
 
+## REGISTER ISO AND ADD INSTANCE
+
+[![Register ISO and Add Instance](https://img.youtube.com/vi/y_S3x3tJvCg/0.jpg)](https://www.youtube.com/watch?v=y_S3x3tJvCg)
+
 
 ### Install Additional KVM Host
 ```
