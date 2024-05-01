@@ -250,9 +250,7 @@ systemctl status xrdp
 ```
 ## CONTINUE WITH INSTALATION (DASHBOARD)
 
-![CloudStack](/images/cloudstack.png?raw=true "Apache CloudStack 4.18")
-
-[![IMAGE ALT TEXT HERE](https://img.youtube.com/vi/8ZZeU3vbbl4/0.jpg)](https://www.youtube.com/watch?v=8ZZeU3vbbl4)
+[![Cloudstack 4.18 Installation on Dashboard](https://img.youtube.com/vi/8ZZeU3vbbl4/0.jpg)](https://www.youtube.com/watch?v=8ZZeU3vbbl4)
 
 
 ### Install Additional KVM Host
