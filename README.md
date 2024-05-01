@@ -252,9 +252,7 @@ systemctl status xrdp
 
 ![CloudStack](/images/cloudstack.png?raw=true "Apache CloudStack 4.18")
 
-![CloudStack](https://youtu.be/8ZZeU3vbbl4?si=R_higiYInBUmiCll)
-
-
+[![IMAGE ALT TEXT HERE](https://img.youtube.com/vi/8ZZeU3vbbl4/0.jpg)](https://www.youtube.com/watch?v=8ZZeU3vbbl4)
 
 
 ### Install Additional KVM Host
