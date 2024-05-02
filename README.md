@@ -345,6 +345,9 @@ sed -i '/#PermitRootLogin prohibit-password/a PermitRootLogin yes' /etc/ssh/sshd
 service ssh restart
 ```
 #### Continue in the cloud management server by adding host
+
+[![Additional KVM Host and Primary-Secondary Storage](https://img.youtube.com/vi/bE7z-D05aCs/0.jpg)](https://www.youtube.com/watch?v=bE7z-D05aCs)
+
 ```
 #cpu memory increased
 #primary and secondary storage increased
