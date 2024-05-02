@@ -260,6 +260,9 @@ systemctl status xrdp
 ### Install Additional KVM Host
 ```
 sudo -i
+apt update
+apt upgrade
+
 mkdir -p /etc/apt/keyrings
 wget -O- http://packages.shapeblue.com/release.asc | gpg --dearmor | sudo tee /etc/apt/keyrings/cloudstack.gpg > /dev/null
 
