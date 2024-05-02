@@ -338,6 +338,12 @@ echo "NEED_STATD=yes" >> /etc/default/nfs-common
 sed -i -e 's/^RPCRQUOTADOPTS=$/RPCRQUOTADOPTS="-p 875"/g' /etc/default/quota
 service nfs-kernel-server restart
 ```
+#### Enable Root Login (PermitRootLogin)
+```
+sed -i '/#PermitRootLogin prohibit-password/a PermitRootLogin yes' /etc/ssh/sshd_config
+#restart ssh service
+service ssh restart
+```
 #### Continue in the cloud management server by adding host
 ```
 #cpu memory increased
