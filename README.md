@@ -180,6 +180,7 @@ echo 'tcp_port = "16509"' >> /etc/libvirt/libvirtd.conf
 echo 'mdns_adv = 0' >> /etc/libvirt/libvirtd.conf
 echo 'auth_tcp = "none"' >> /etc/libvirt/libvirtd.conf
 echo 'remote_mode="legacy"' >> /etc/libvirt/libvirt.conf
+systemctl restart libvirtd
 ```
 #### For Ubuntu 20.04/22.04/24.04 Socket Masking
 ```
