@@ -177,10 +177,10 @@ echo 'auth_tcp = "none"' >> /etc/libvirt/libvirtd.conf
 echo 'remote_mode="legacy"' >> /etc/libvirt/libvirt.conf
 systemctl restart libvirtd
 ```
-#### On Ubuntu 22.04, add LIBVIRTD_ARGS="--listen" to /etc/default/libvirtd instead.
+#### On Ubuntu 22.04, add LIBVIRTD_ARGS="--listen" to /etc/default/libvirtd instead. (ERROR???)
 ```
 #sed -i.bak 's/^\(LIBVIRTD_ARGS=\).*/\1"--listen"/' /etc/default/libvirtd
-echo LIBVIRTD_ARGS=\"--listen\" >> /etc/default/libvirtd
+#echo LIBVIRTD_ARGS=\"--listen\" >> /etc/default/libvirtd
 systemctl restart libvirtd
 ```
 #### For Ubuntu 20.04/22.04/24.04 Socket Masking
