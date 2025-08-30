@@ -100,12 +100,14 @@ timedatectl set-timezone Asia/Jakarta
 https://rohityadav.cloud/blog/cloudstack-kvm/
 ```
 
-#### CloudStack Management Server Setup from SHAPEBLUE ACS 4.18
+#### CloudStack Management Server Setup from SHAPEBLUE ACS 4.20
 ```
 sudo -i
 mkdir -p /etc/apt/keyrings
 wget -O- http://packages.shapeblue.com/release.asc | gpg --dearmor | sudo tee /etc/apt/keyrings/cloudstack.gpg > /dev/null
-echo deb [signed-by=/etc/apt/keyrings/cloudstack.gpg] http://packages.shapeblue.com/cloudstack/upstream/debian/4.18 / > /etc/apt/sources.list.d/cloudstack.list
+
+echo deb [signed-by=/etc/apt/keyrings/cloudstack.gpg] http://packages.shapeblue.com/cloudstack/upstream/debian/4.20 / > /etc/apt/sources.list.d/cloudstack.list
+apt-get update -y
 
 #update and install cloudstack management and mysql
 #it takes very long time
