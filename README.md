@@ -133,9 +133,9 @@ innodb_lock_wait_timeout=600
 max_connections=1000
 log-bin=mysql-bin
 binlog-format = 'ROW'
-
-#restart mysql service
-
+```
+#### Restart mysql service
+```
 systemctl restart mysql
 ```
 #### Deploy Database as Root and Then Create "cloud" User with Password "cloud" too
