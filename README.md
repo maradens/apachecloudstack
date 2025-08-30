@@ -79,7 +79,7 @@ resize2fs /dev/ubuntu-vg/ubuntu-lv
 apt-get install openntpd openssh-server sudo vim htop tar -y
 apt-get install intel-microcode -y
 passwd root
-#change it to Pa$$w0rd
+#change it to password
 ```
 #### Enable Root Login (PermitRootLogin)
 ```
@@ -140,7 +140,7 @@ systemctl restart mysql
 ```
 #### Deploy Database as Root and Then Create "cloud" User with Password "cloud" too
 ```
-cloudstack-setup-databases cloud:cloud@localhost --deploy-as=root:Pa$$w0rd -i 192.168.101.4
+cloudstack-setup-databases cloud:cloud@localhost --deploy-as=root:password -i 192.168.101.4
 ```
 #### Configure Primary and Secondary Storage
 ```
