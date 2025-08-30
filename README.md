@@ -122,9 +122,9 @@ apt-get install cloudstack-usage
 #### Configure Database --> next time using sed 
 ```
 nano /etc/mysql/mysql.conf.d/mysqld.cnf
-
-#paste below code to mysqld.cnf under [mysqld] block section
-
+```
+#### Paste below code to mysqld.cnf under [mysqld] block section
+```
 [mysqld]
 server-id = 1
 sql-mode="STRICT_TRANS_TABLES,NO_ENGINE_SUBSTITUTION,ERROR_FOR_DIVISION_BY_ZERO,NO_ZERO_DATE,NO_ZERO_IN_DATE,NO_ENGINE_SUBSTITUTION"
