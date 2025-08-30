@@ -16,7 +16,7 @@ IP Address for public: 192.168.101.71-90
 ### SET STATIC IP ADDRESS FOR MANAGEMENT SERVER
 #### Network configuration with netplan
 #### Rename all existing configuration by adding .bak
-#### maradens@dtecloud:~$ cat /etc/netplan/01-netcfg.yaml
+#### ****:~$ cat /etc/netplan/01-netcfg.yaml
 ```
 # This is the network config written by 'subiquity'
 network:
@@ -28,19 +28,29 @@ network:
       dhcp6: false
       optional: true
   vlans:
-    eno1.2101:
-
-  bridges:
-    cloudbr0:
-      addresses: [192.168.104.10/24]
-      routes:
-        - to: default
-          via: 192.168.104.1
-      nameservers:
-        addresses: [1.1.1.1,8.8.8.8]
-      interfaces: [eno1]
+    vlan.2101:
+      id: 2101
+      link: "eno1"
       dhcp4: false
       dhcp6: false
+    vlan.262:
+      id: 262
+      link: "eno1"
+      dhcp4: false
+      dhcp6: false
+      addresses: [***.***.101.4/24]
+      nameservers:
+        addresses: [8.8.8.8,8.8.4.4]
+  bridges:
+    cloudbr0:
+      interfaces: [vlan.2101]
+      addresses: [192.168.101.4/24]
+      routes:
+        - to: default
+          via: 192.168.101.1
+      mtu: 1500
+      nameservers:
+        addresses: [8.8.8.8,8.8.4.4]
       parameters:
         stp: false
         forward-delay: 0
