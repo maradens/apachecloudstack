@@ -140,7 +140,7 @@ systemctl restart mysql
 ```
 #### Deploy Database as Root and Then Create "cloud" User with Password "cloud" too
 ```
-cloudstack-setup-databases cloud:cloud@localhost --deploy-as=root:Pa$$w0rd -i 192.168.104.10
+cloudstack-setup-databases cloud:cloud@localhost --deploy-as=root:Pa$$w0rd -i 192.168.101.4
 ```
 #### Configure Primary and Secondary Storage
 ```
