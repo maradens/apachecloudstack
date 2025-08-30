@@ -151,10 +151,14 @@ exportfs -a
 ```
 #### Configure NFS server
 ```
-sed -i -e 's/^RPCMOUNTDOPTS="--manage-gids"$/RPCMOUNTDOPTS="-p 892 --manage-gids"/g' /etc/default/nfs-kernel-server
-sed -i -e 's/^STATDOPTS=$/STATDOPTS="--port 662 --outgoing-port 2020"/g' /etc/default/nfs-common
-echo "NEED_STATD=yes" >> /etc/default/nfs-common
-sed -i -e 's/^RPCRQUOTADOPTS=$/RPCRQUOTADOPTS="-p 875"/g' /etc/default/quota
+#sed -i -e 's/^RPCMOUNTDOPTS="--manage-gids"$/RPCMOUNTDOPTS="-p 892 --manage-gids"/g' /etc/default/nfs-kernel-server
+#sed -i -e 's/^STATDOPTS=$/STATDOPTS="--port 662 --outgoing-port 2020"/g' /etc/default/nfs-common
+#echo "NEED_STATD=yes" >> /etc/default/nfs-common
+#sed -i -e 's/^RPCRQUOTADOPTS=$/RPCRQUOTADOPTS="-p 875"/g' /etc/default/quota
+echo 'RPCMOUNTDOPTS="-p 892 --manage-gids"' >> /etc/default/nfs-kernel-server
+echo 'STATDOPTS="--port 662 --outgoing-port 2020"' >> /etc/default/nfs-common
+echo 'NEED_STATD=yes' >> /etc/default/nfs-common
+echo 'RPCRQUOTADOPTS="-p 875"' /etc/default/quota
 service nfs-kernel-server restart
 ```
 ### Configure Cloudstack Host with KVM Hypervisor
