@@ -642,7 +642,7 @@ ln -s /etc/apparmor.d/usr.lib.libvirt.virt-aa-helper /etc/apparmor.d/disable/
 apparmor_parser -R /etc/apparmor.d/usr.sbin.libvirtd
 apparmor_parser -R /etc/apparmor.d/usr.lib.libvirt.virt-aa-helper
 ```
-## Dashboard & Next Steps{#Dashboard--Next-Steps-418}
+## Dashboard & Next Steps {#Dashboard--Next-Steps-418}
 
 **6. Continue on the CloudStack Dashboard**
 Once the new host is prepared, you must add it to your CloudStack environment through the web UI. This process involves adding the host to a zone, cluster, and finally, adding the primary and secondary storage.
