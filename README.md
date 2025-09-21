@@ -6,8 +6,8 @@ This README provides a comprehensive, step-by-step guide for installing Apache C
 
 ## 📖 Table of Contents
 
-  * [Apache CloudStack 4.20 on Ubuntu 24.04](https://www.google.com/search?q=%23apache-cloudstack-420-on-ubuntu-2404)
-      * [System and Network Configuration](https://www.google.com/search?q=%23system-and-network-configuration)
+  * [Apache CloudStack 4.20 on Ubuntu 24.04](#Apache-CloudStack-420-on-Ubuntu-2404)
+      * [System and Network Configuration](System-and-Network-Configuration)
       * [CloudStack Management Server Installation](https://www.google.com/search?q=%23cloudstack-management-server-installation)
       * [CloudStack KVM Host Configuration](https://www.google.com/search?q=%23cloudstack-kvm-host-configuration)
       * [Finalizing the Installation](https://www.google.com/search?q=%23finalizing-the-installation)
