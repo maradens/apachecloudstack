@@ -194,7 +194,7 @@ exportfs -a
 ```
 
 **6. Configure NFS Server**
-Modify the NFS configuration to set specific ports for RPC services. This can be done by editing the files, located at `/etc/default`, directly or by replacing entire content of files with the provided content, respectively below.
+To configure the NFS server with specific ports for RPC services, modify the relevant configuration files located in `/etc/default`. You can either edit these files directly or replace their entire contents with the provided configuration shown below.
 
 Paste below configuration to `/etc/default/nfs-kernel-server`
 ```bash
