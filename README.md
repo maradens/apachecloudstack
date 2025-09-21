@@ -1,5 +1,23 @@
 # Apache CloudStack 4.20 Installation on Ubuntu 24.04
 
+## Table of Contents
+1. [Introduction](#introduction)
+2. [Prerequisites](#prerequisites)
+3. [Network Configuration](#network-configuration)
+   - [Ubuntu 24.04 Setup](#ubuntu-2404-network-setup)
+   - [Ubuntu 22.04 Setup](#ubuntu-2204-network-setup)
+4. [System Preparation](#system-preparation)
+5. [Apache CloudStack Installation](#apache-cloudstack-installation)
+   - [Management Server Setup](#management-server-setup)
+   - [Database Configuration](#database-configuration)
+   - [Storage Setup](#storage-setup)
+6. [KVM Hypervisor Configuration](#kvm-hypervisor-configuration)
+7. [Firewall Configuration](#firewall-configuration)
+8. [Finalizing Installation](#finalizing-installation)
+9. [Additional Host Setup](#additional-host-setup)
+10. [Optional Components](#optional-components)
+11. [Troubleshooting](#troubleshooting)
+
 ## ALL in ONE - Cloudstack Management and Host in One Machine
 
 ==============================================================
