@@ -1,22 +1,39 @@
-# Apache CloudStack 4.20 Installation on Ubuntu 24.04
+# Comprehensive Guide to Apache CloudStack Installation
+This document provides a detailed, step-by-step guide for installing Apache CloudStack in an "All-in-One" configuration, where the CloudStack Management Server and the KVM host reside on the same machine. This guide is tailored for a general reader and includes explanations for each command and configuration change.
 
 ## Table of Contents
-1. [Introduction](#introduction)
-2. [Prerequisites](#prerequisites)
-3. [Network Configuration](#network-configuration)
-   - [Ubuntu 24.04 Setup](#ubuntu-2404-network-setup)
-   - [Ubuntu 22.04 Setup](#ubuntu-2204-network-setup)
-4. [System Preparation](#system-preparation)
-5. [Apache CloudStack Installation](#apache-cloudstack-installation)
-   - [Management Server Setup](#management-server-setup)
-   - [Database Configuration](#database-configuration)
-   - [Storage Setup](#storage-setup)
-6. [KVM Hypervisor Configuration](#kvm-hypervisor-configuration)
-7. [Firewall Configuration](#firewall-configuration)
-8. [Finalizing Installation](#finalizing-installation)
-9. [Additional Host Setup](#additional-host-setup)
-10. [Optional Components](#optional-components)
-11. [Troubleshooting](#troubleshooting)
+[Apache CloudStack 4.20 on Ubuntu 24.04](#Apache-CloudStack-4.20-on-Ubuntu-24.04)
+1. [Network and System Configuration](#Network-and-System-Configuration)
+2. [Apache CloudStack Management Server Installation](#Apache-CloudStack-Management-Server-Installation)
+3. KVM Hypervisor and CloudStack Agent Configuration
+4. Launching the Cloud and Final Steps
+Apache CloudStack 4.18 on Ubuntu 22.04
+1. Network and System Configuration
+2. Apache CloudStack Management Server Installation
+3. KVM Hypervisor and CloudStack Agent Configuration
+4. Launching the Cloud and Final Steps
+
+## Apache CloudStack 4.20 on Ubuntu 24.04
+This section details the installation for Apache CloudStack version 4.20 on a single Ubuntu 24.04 machine, serving as both the management server and the virtualization host.
+
+### 1. Network and System Configuration
+This first set of steps prepares the host machine by setting up a static network configuration and installing necessary tools.
+
+**Network Details:**
+**Home Network:** 192.168.101.0/24
+**Gateway:** 192.168.101.1
+**Management IP:** 192.168.101.4
+**System IPs:** 192.168.101.51-70
+**Public IPs:** 192.168.101.71-90
+
+**Step 1.1:** Set a Static IP Address with Netplan
+netplan is a utility for easily configuring networking on Ubuntu systems. This configuration creates a cloudbr0 bridge, which is essential for CloudStack to manage virtual machine networks.
+First, rename any existing configuration files by adding a .bak extension.
+Then, edit the 01-netcfg.yaml file and add the following configuration. This sets up VLANs and the bridge with a static IP and gateway.
+
+
+
+
 
 ## ALL in ONE - Cloudstack Management and Host in One Machine
 
