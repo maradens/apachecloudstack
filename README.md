@@ -40,9 +40,9 @@ The Management Server needs a static IP address. This guide uses `netplan` for n
 
   * Rename any existing configuration files in `/etc/netplan/` by adding a `.bak` extension.
   * Create a new configuration file, for example, `/etc/netplan/01-netcfg.yaml`, and add the following content. This configuration sets up a bridge (`cloudbr0`) with a static IP and connects it to the physical interface (`eno1`). It also defines two VLANs (`vlan.2101` and `vlan.262`).
-    
+
     ```yaml
-     network:
+   network:
    version: 2
    renderer: networkd
    ethernets:
