@@ -2,7 +2,7 @@
 This document provides a detailed, step-by-step guide for installing Apache CloudStack in an "All-in-One" configuration, where the CloudStack Management Server and the KVM host reside on the same machine. This guide is tailored for a general reader and includes explanations for each command and configuration change.
 
 ## Table of Contents
-[Apache CloudStack 4.20 on Ubuntu 24.04](#apache-cloudstack-4.20-on-ubuntu-24.04)
+[Apache CloudStack 4.20 on Ubuntu 24.04](#apache-cloudstack-installation)
 1. [Network and System Configuration](#1.-network-and-system-configuration)
 2. [Apache CloudStack Management Server Installation](#2.-apache-cloudstack-management-server-installation)
 3. KVM Hypervisor and CloudStack Agent Configuration
@@ -825,7 +825,7 @@ service ssh restart
 #cpu memory increased
 #primary and secondary storage increased
 ```
-# Apache CloudStack 4.20 on Ubuntu 24.04
+# Apache CloudStack Installation
 # Introduction
 # HAPPY CLOUDSTACKING!
 
