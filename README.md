@@ -13,7 +13,7 @@ Apache CloudStack 4.18 on Ubuntu 22.04
 3. KVM Hypervisor and CloudStack Agent Configuration
 4. [Launching the Cloud and Final Steps](#introduction)
 
-## Apache CloudStack 4.20 on Ubuntu 24.04
+Apache CloudStack 4.20 on Ubuntu 24.04
 This section details the installation for Apache CloudStack version 4.20 on a single Ubuntu 24.04 machine, serving as both the management server and the virtualization host.
 
 ### 1. Network and System Configuration
@@ -825,6 +825,7 @@ service ssh restart
 #cpu memory increased
 #primary and secondary storage increased
 ```
+# Apache CloudStack 4.20 on Ubuntu 24.04
 # Introduction
 # HAPPY CLOUDSTACKING!
 
