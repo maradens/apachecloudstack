@@ -289,6 +289,7 @@ echo 'tcp_port = "16509"' >> /etc/libvirt/libvirtd.conf
 echo 'mdns_adv = 0' >> /etc/libvirt/libvirtd.conf
 echo 'auth_tcp = "none"' >> /etc/libvirt/libvirtd.conf
 echo 'remote_mode="legacy"' >> /etc/libvirt/libvirt.conf
+systemctl restart libvirtd
 
 # Mask libvirt sockets and restart the service to apply changes
 systemctl mask libvirtd.socket libvirtd-ro.socket libvirtd-admin.socket libvirtd-tls.socket libvirtd-tcp.socket
