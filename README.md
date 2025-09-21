@@ -121,11 +121,10 @@ This is required by cloudstack management when adding a new host.
 
 ```bash
 sed -i '/#PermitRootLogin prohibit-password/a PermitRootLogin yes' /etc/ssh/sshd_config
-#restart ssh service
 service ssh restart
 ```
 
-**5. Set Timezone**
+**6. Set Timezone**
 Ensure your system time is synchronized, which is critical for a well-functioning server environment.
 
 ```bash
