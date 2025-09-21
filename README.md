@@ -372,9 +372,8 @@ tail -f /var/log/cloudstack/management/management-server.log
 **2. Open the CloudStack Dashboard**
 Once the services are running, you can access the CloudStack dashboard in your web browser. The default credentials are `username: admin` and `password: password`.
 
-```
 http://192.168.101.4:8080/client
-```
+
 
 -----
 
