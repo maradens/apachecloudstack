@@ -40,44 +40,32 @@ The Management Server needs a static IP address. This guide uses `netplan` for n
 
   * Rename any existing configuration files in `/etc/netplan/` by adding a `.bak` extension.
   * Create a new configuration file, for example, `/etc/netplan/01-netcfg.yaml`, and add the following content. This configuration sets up a bridge (`cloudbr0`) with a static IP and connects it to the physical interface (`eno1`). It also defines two VLANs (`vlan.2101` and `vlan.262`).
+    
     ```yaml
-    # This is the network config written by 'subiquity'
-    network:
-      version: 2
-      renderer: networkd
-      ethernets:
-        eno1:
-          dhcp4: false
-          dhcp6: false
-          optional: true
-      vlans:
-        vlan.2101:
-          id: 2101
-          link: "eno1"
-          dhcp4: false
-          dhcp6: false
-        vlan.262:
-          id: 262
-          link: "eno1"
-          dhcp4: false
-          dhcp6: false
-          addresses: [***.***.101.4/24]
-          nameservers:
-            addresses: [8.8.8.8,8.8.4.4]
-      bridges:
-        cloudbr0:
-          interfaces: [vlan.2101]
-          addresses: [192.168.101.4/24]
-          routes:
-            - to: default
-              via: 192.168.101.1
-          mtu: 1500
-          nameservers:
-            addresses: [8.8.8.8,8.8.4.4]
-          parameters:
-            stp: false
-            forward-delay: 0
+     network:
+   version: 2
+   renderer: networkd
+   ethernets:
+     eno1:
+       dhcp4: false
+       dhcp6: false
+       optional: true
+   bridges:
+     cloudbr0:
+       addresses: [192.168.101.4/24]
+       routes:
+        - to: default
+          via: 192.168.101.1
+       nameservers:
+         addresses: [1.1.1.1, 8.8.8.8]
+       interfaces: [eno1]
+       dhcp4: false
+       dhcp6: false
+       parameters:
+         stp: false
+         forward-delay: 0
     ```
+    
   * Apply the new configuration and reboot the system.
     ```bash
     sudo -i
