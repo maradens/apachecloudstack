@@ -196,7 +196,7 @@ exportfs -a
 **6. Configure NFS Server**
 Modify the NFS configuration to set specific ports for RPC services. This can be done by editing the files, located at `/etc/default`, directly or by replacing entire content of files with the provided content, respectively below.
 
-Paste below configuration to `/etc/default/nfs-kernel-server'
+Paste below configuration to `/etc/default/nfs-kernel-server`
 ```bash
 # Configuration for nfs-kernel-server
 # Number of servers to start up
@@ -220,7 +220,7 @@ NEED_SVCGSSD=""
 RPCSVCGSSDOPTS=""
 ```
 
-Paste below configuration to `/etc/default/nfs-common'
+Paste below configuration to `/etc/default/nfs-common`
 ```bash
 # Configuration for nfs-commom
 # If you do not set values for the NEED_ options, they will be attempted
@@ -245,7 +245,7 @@ NEED_GSSD=
 NEED_STATD=yes
 ```
 
-Paste below configuration to `/etc/default/quota'
+Paste below configuration to `/etc/default/quota`
 ```bash
 # Configuration for quota
 # Set to "true" if warnquota should be run in cron.daily
