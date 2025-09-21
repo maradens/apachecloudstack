@@ -294,6 +294,10 @@ systemctl restart libvirtd
 # Mask libvirt sockets and restart the service to apply changes
 systemctl mask libvirtd.socket libvirtd-ro.socket libvirtd-admin.socket libvirtd-tls.socket libvirtd-tcp.socket
 systemctl restart libvirtd
+
+#On Ubuntu 22.04, add LIBVIRTD_ARGS="--listen" to /etc/default/libvirtd instead. 
+echo LIBVIRTD_ARGS=\"--listen\" >> /etc/default/libvirtd
+systemctl restart libvirtd
 ```
 
 **3. Docker & Service Compatibility**
