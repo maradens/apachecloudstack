@@ -1,5 +1,3 @@
-I can definitely help you improve your README. The revised version below is more detailed and user-friendly, providing a clearer step-by-step guide for a general audience. It includes a table of contents, descriptive headings, and explanations for each command to make the installation process more understandable.
-
 # Apache CloudStack Installation Guide
 
 This README provides a comprehensive, step-by-step guide for installing Apache CloudStack on a single machine, which acts as both the **Management Server** and the **KVM Host**. This "all-in-one" setup is perfect for testing, learning, and small-scale deployments. The guide covers two different versions: **CloudStack 4.20 on Ubuntu 24.04** and **CloudStack 4.18 on Ubuntu 22.04**.
