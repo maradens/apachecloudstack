@@ -295,7 +295,7 @@ systemctl restart libvirtd
 systemctl mask libvirtd.socket libvirtd-ro.socket libvirtd-admin.socket libvirtd-tls.socket libvirtd-tcp.socket
 systemctl restart libvirtd
 
-#On Ubuntu 22.04, add LIBVIRTD_ARGS="--listen" to /etc/default/libvirtd instead. 
+# Enable Remote Libvirt Access for CloudStack KVM Integration (Remote Access)
 echo LIBVIRTD_ARGS=\"--listen\" >> /etc/default/libvirtd
 systemctl restart libvirtd
 ```
