@@ -30,6 +30,13 @@ This section details the installation of Apache CloudStack 4.20 on a single Ubun
 
 First, you need to configure your system and network settings. The example uses a home network of **192.168.101.0/24** with a gateway at **192.168.101.1**.
 
+**Network Details:**  
+- **Home Network:** 192.168.101.0/24
+- **Gateway:** 192.168.101.1
+- **Management IP:** 192.168.101.4
+- **System IPs:** 192.168.101.51-70
+- **Public IPs:** 192.168.101.71-90
+
 **1. Set a Static IP Address**
 The Management Server needs a static IP address. This guide uses `netplan` for network configuration.
 
