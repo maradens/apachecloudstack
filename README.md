@@ -11,7 +11,7 @@ This README provides a comprehensive, step-by-step guide for installing Apache C
       * [CloudStack Management Server Installation](#CloudStack-Management-Server-Installation)
       * [CloudStack KVM Host Configuration](#CloudStack-KVM-Host-Configuration)
       * [Finalizing the Installation](#Finalizing-the-Installation)
-      * [Dashboard & Next Steps](Dashboard--Next-Steps)
+      * [Dashboard & Next Steps](#Dashboard--Next-Steps)
   * [Apache CloudStack 4.18 on Ubuntu 22.04](https://www.google.com/search?q=%23apache-cloudstack-418-on-ubuntu-2204)
       * [System and Network Configuration](https://www.google.com/search?q=%23system-and-network-configuration-1)
       * [CloudStack Management Server Installation](https://www.google.com/search?q=%23cloudstack-management-server-installation-1)
