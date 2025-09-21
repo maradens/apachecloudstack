@@ -63,7 +63,6 @@ The Management Server needs a static IP address. This guide uses `netplan` for n
        parameters:
          stp: false
          forward-delay: 0
-
     ```
     
   * Apply the new configuration and reboot the system.
