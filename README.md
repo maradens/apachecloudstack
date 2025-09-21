@@ -92,23 +92,41 @@ The Management Server needs a static IP address. This guide uses `netplan` for n
 Update your system and install essential packages, including `bridge-utils` for network bridging and an SSH server for remote access.
 
 ```bash
-apt update & apt upgrade
+apt update & upgrade
 apt install htop lynx duf -y
-apt install bridge-utils openntpd openssh-server sudo vim htop tar intel-microcode -y
+apt install bridge-utils
 ```
 
-**3. Enable Root Login via SSH**
-For easier management, enable root login. This is not recommended for production environments.
+**3. Configure LVM (Optional)**
+This step is only necessary if you are using Logical Volume Management and need to extend the disk space.
 
 ```bash
+lvextend -l +100%FREE /dev/ubuntu-vg/ubuntu-lv
+resize2fs /dev/ubuntu-vg/ubuntu-lv
+```
+
+**4. Install SSH Server and Others Tools**
+These commands install an SSH server for remote access terminal and other tools for monitoring and configuring.
+
+```bash
+apt-get install openntpd openssh-server sudo vim htop tar -y
+apt-get install intel-microcode -y
 passwd root
-# Enter your desired root password here
+# Set a new password for the root user.
+```
+
+**5. Enable Root Login via SSH**
+For easier management, enable root login. This is not recommended for production environments.
+This is required by cloudstack management when adding a new host.
+
+```bash
 sed -i '/#PermitRootLogin prohibit-password/a PermitRootLogin yes' /etc/ssh/sshd_config
+#restart ssh service
 service ssh restart
 ```
 
-**4. Set Timezone**
-Ensure your system time is synchronized.
+**5. Set Timezone**
+Ensure your system time is synchronized, which is critical for a well-functioning server environment.
 
 ```bash
 timedatectl set-timezone Asia/Jakarta
