@@ -18,7 +18,7 @@ This README provides a comprehensive, step-by-step guide for installing Apache C
       * [CloudStack KVM Host Configuration ACS 4.18](https://www.google.com/search?q=%23cloudstack-kvm-host-configuration-1)
       * [Finalizing the Installation ACS 4.18](#Finalizing-the-Installation-ACS-418)
       * [Dashboard & Next Steps ACS 4.18](#Dashboard--Next-Steps-ACS-418)
-  * [Adding an Additional KVM Host](https://www.google.com/search?q=%23adding-an-additional-kvm-host)
+  * [Adding an Additional KVM Host ACS 4.18](#Adding-an-Additional-KVM-Host-ACS-418)
 
 -----
 
@@ -654,8 +654,8 @@ systemctl status xrdp
 
 [![Register ISO and Add Instance](https://img.youtube.com/vi/y_S3x3tJvCg/0.jpg)](https://www.youtube.com/watch?v=y_S3x3tJvCg)
 
-
-### Install Additional KVM Host
+## Adding an Additional KVM Host ACS 4.18
+Install Additional KVM Host
 ```
 sudo -i
 apt update
