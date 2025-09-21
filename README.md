@@ -360,6 +360,7 @@ apt-get install iptables-persistent
 
 **1. Launch the Management Server**
 Run the final command to set up the Management Server and start the service.
+This command completes the CloudStack setup and starts the management server. The tail command lets you monitor the log file to see when the services are fully up and running.
 
 ```bash
 cloudstack-setup-management
@@ -372,7 +373,7 @@ tail -f /var/log/cloudstack/management/management-server.log
 Once the services are running, you can access the CloudStack dashboard in your web browser. The default credentials are `username: admin` and `password: password`.
 
 ```
-http://192.168.104.10:8080/client
+http://192.168.101.4:8080/client
 ```
 
 -----
