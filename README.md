@@ -255,6 +255,13 @@ run_warnquota=
 RPCRQUOTADOPTS="-p 875"
 ```
 
+**7. CloudStack Usage and Billing (Optional)**
+The `cloudstack-usage` package in Apache CloudStack installs the Usage Server, which is an optional but powerful component designed to track and report resource consumption across your cloud environment.
+
+```bash
+apt-get install cloudstack-usage 
+```
+
 -----
 
 ### CloudStack KVM Host Configuration
