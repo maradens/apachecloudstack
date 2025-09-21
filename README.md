@@ -92,7 +92,7 @@ The Management Server needs a static IP address. This guide uses `netplan` for n
 Update your system and install essential packages, including `bridge-utils` for network bridging and an SSH server for remote access.
 
 ```bash
-apt update && apt upgrade
+apt update & apt upgrade
 apt install htop lynx duf -y
 apt install bridge-utils openntpd openssh-server sudo vim htop tar intel-microcode -y
 ```
