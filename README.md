@@ -194,7 +194,7 @@ exportfs -a
 ```
 
 **6. Configure NFS Server**
-Modify the NFS configuration to set specific ports for RPC services. This can be done by editing the files directly or by appending the provided commands.
+Modify the NFS configuration to set specific ports for RPC services. This can be done by editing the files (`nfs-kernel-server`,`nfs-common`,`quota`) directly or by appending the provided commands.
 
 ```bash
 echo 'RPCMOUNTDOPTS="-p 892 --manage-gids"' >> /etc/default/nfs-kernel-server
