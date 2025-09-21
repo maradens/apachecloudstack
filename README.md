@@ -12,13 +12,12 @@ This README provides a comprehensive, step-by-step guide for installing Apache C
       * [CloudStack KVM Host Configuration](#CloudStack-KVM-Host-Configuration)
       * [Finalizing the Installation](#Finalizing-the-Installation)
       * [Dashboard & Next Steps](#Dashboard--Next-Steps)
-  * [Apache CloudStack 4.18 on Ubuntu 22.04](https://www.google.com/search?q=%23apache-cloudstack-418-on-ubuntu-2204)
-      * [System and Network Configuration](https://www.google.com/search?q=%23system-and-network-configuration-1)
-      * [CloudStack Management Server Installation](https://www.google.com/search?q=%23cloudstack-management-server-installation-1)
-      * [CloudStack KVM Host Configuration](https://www.google.com/search?q=%23cloudstack-kvm-host-configuration-1)
-      * [Finalizing the Installation](https://www.google.com/search?q=%23finalizing-the-installation-1)
-      * [Dashboard & Next Steps](#custom-id)
-      * [Jump to Research](#research-dev)
+  * [Apache CloudStack 4.18 on Ubuntu 22.04](#Apache-CloudStack-418-on-Ubuntu-2204)
+      * [System and Network Configuration ACS 4.18](#System-and-Network-Configuration-ACS-418)
+      * [CloudStack Management Server Installation ACS 4.18](#CloudStack-Management-Server-Installation-ACS-418)
+      * [CloudStack KVM Host Configuration ACS 4.18](https://www.google.com/search?q=%23cloudstack-kvm-host-configuration-1)
+      * [Finalizing the Installation ACS 4.18](#Finalizing-the-Installation-ACS-418)
+      * [Dashboard & Next Steps ACS 4.18](#Dashboard--Next-Steps-ACS-418)
   * [Adding an Additional KVM Host](https://www.google.com/search?q=%23adding-an-additional-kvm-host)
 
 -----
@@ -643,7 +642,8 @@ ln -s /etc/apparmor.d/usr.lib.libvirt.virt-aa-helper /etc/apparmor.d/disable/
 apparmor_parser -R /etc/apparmor.d/usr.sbin.libvirtd
 apparmor_parser -R /etc/apparmor.d/usr.lib.libvirt.virt-aa-helper
 ```
-## Dashboard & Next Steps {#custom-id}
+## Dashboard & Next Steps ACS 4.18
+
 ## Research & Development {#research-dev}
 
 
