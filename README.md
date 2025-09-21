@@ -3,8 +3,8 @@ This document provides a detailed, step-by-step guide for installing Apache Clou
 
 ## Table of Contents
 [Apache CloudStack 4.20 on Ubuntu 24.04](#Apache-CloudStack-4.20-on-Ubuntu-24.04)
-1. [Network and System Configuration](#Network-and-System-Configuration)
-2. [Apache CloudStack Management Server Installation](#Apache-CloudStack-Management-Server-Installation)
+1. [Network and System Configuration](#1.-Network-and-System-Configuration)
+2. [Apache CloudStack Management Server Installation](#2.-Apache-CloudStack-Management-Server-Installation)
 3. KVM Hypervisor and CloudStack Agent Configuration
 4. Launching the Cloud and Final Steps
 Apache CloudStack 4.18 on Ubuntu 22.04
