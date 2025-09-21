@@ -17,7 +17,7 @@ This README provides a comprehensive, step-by-step guide for installing Apache C
       * [CloudStack Management Server Installation](https://www.google.com/search?q=%23cloudstack-management-server-installation-1)
       * [CloudStack KVM Host Configuration](https://www.google.com/search?q=%23cloudstack-kvm-host-configuration-1)
       * [Finalizing the Installation](https://www.google.com/search?q=%23finalizing-the-installation-1)
-      * [Dashboard & Next Steps](#Dashboard--Next-Steps-418)
+      * [Dashboard & Next Steps](#custom-id)
   * [Adding an Additional KVM Host](https://www.google.com/search?q=%23adding-an-additional-kvm-host)
 
 -----
@@ -642,7 +642,7 @@ ln -s /etc/apparmor.d/usr.lib.libvirt.virt-aa-helper /etc/apparmor.d/disable/
 apparmor_parser -R /etc/apparmor.d/usr.sbin.libvirtd
 apparmor_parser -R /etc/apparmor.d/usr.lib.libvirt.virt-aa-helper
 ```
-## Dashboard & Next Steps {#Dashboard--Next-Steps-418}
+## Dashboard & Next Steps {#custom-id}
 
 **6. Continue on the CloudStack Dashboard**
 Once the new host is prepared, you must add it to your CloudStack environment through the web UI. This process involves adding the host to a zone, cluster, and finally, adding the primary and secondary storage.
